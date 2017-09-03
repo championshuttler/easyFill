@@ -1,0 +1,41 @@
+/*
+* @Author: champioshuttler
+* @Date:   2017-09-03 23:17:34
+
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+ol, ul, li {
+	list-style:none
+}
+
+:focus {
+	outline:none
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	color: #4c4c4c;
+	width: 500px;
+}
+
+p {
+	font-size: 12px;
+	width: 150px;
+	display: inline-block;
+	margin-left: 18px;
+}
+h1 {
+	font-size: 32px;
+	font-weight: 300;
+	color: #4c4c4c;
+	text-align: center;
+	padding-top: 10px;
+	margin-bottom: 10px;
+}
+
+label {
+	font-size: 14px;
+}
