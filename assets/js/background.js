@@ -52,7 +52,13 @@ var facebook = browser.contextMenus.create({
 
 
 var mobile = browser.contextMenus.create({
-	"title": "Paste easy link here",
+	"title": "Mobile Number",
 	"contexts": ["editable"],
 	"onclick": pasteLink
 });
+
+// var parent = browser.contextMenus.create({
+// 	"title": "Paste easy link here",
+// 	"contexts": ["editable"],
+// 	"onclick": pasteLink
+// });
