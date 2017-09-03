@@ -1,7 +1,24 @@
 {
   "manifest_version" : 2,
-
   "name": "Easy Fill",
   "version": "1.0",
-  "desription": "A mozilla add-ons to "
-}nk
+
+  "description": "A mozilla add-ons to make Developers more lazy :P",  //Temporary description
+
+  "icons" : {
+  "48":  "icons/48.png" // Temporary Icon need a Logo Designer :P
+  },
+  "permissions": [
+		"contextMenus"
+	],
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": [""]
+    }
+  ]
+
+
+
+}
