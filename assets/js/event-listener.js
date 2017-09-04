@@ -1,6 +1,7 @@
 /*
 * @Author: championshuttler
-* @Date:   2016-09-05  00:39:44
+* @Date:   2017-09-05  00:39:44
+ @LastUpdated : 2017-09-05 00:45:45        coding with weedy eyes :P
 */
 
 var list_keys = [ 'personal', 'email', 'github', 'linkedin', 'twitter', 'facebook', 'personal', 'email', 'mobile'];
@@ -17,4 +18,10 @@ function updateUI(){
 			document.getElementById(key).value = "";
 		}
 	}
+}
+function animate_text(id){
+	var text_div = $(id)
+
+	text_div.show();
+	text_div.fadeOut(2000);
 }
