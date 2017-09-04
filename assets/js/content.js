@@ -55,3 +55,21 @@ $(document).on('ready', function(){
 			element.value = firstPart + message.link + lastPart;
 		}
 	});
+
+
+  browser.runtime.sendMessage({ method: "getLocalStorage", key: "status" }, function(response) {
+		for (var key in response.data) {
+			$('input').each(function(index, data) {
+				if (data.type != 'hidden' && $.inArray(data.type, forbiddenTextAcceptingInputTypes) == -1) {
+					if (data.name.toUpperCase().search(key.toUpperCase()) != -1) {
+						$(`[name="${data.name}"]`).val(response.data[key]);
+					}
+					else if(data.id.toUpperCase().search(key.toUpperCase()) != -1) {
+						$(`[id="${data.id}"]`).val(response.data[key]);
+					}
+				}
+			});
+		}
+	});
+
+});
