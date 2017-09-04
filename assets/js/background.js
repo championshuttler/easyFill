@@ -96,7 +96,23 @@ function pasteLink(info, tab){
 	// 	requested_key = "extra";
 	// }
 
+	browser.tabs.query({
+			"active": true,
+			"currentWindow": true
+		}, function (tabs) {
+			requested_link = localStorage.getItem(requested_key);
+			status = "success";
+			if(typeof requested_link == "object" || requested_link == ""){
+				status = "fail";
+			}
 
+			// send message to the current tab
+			browser.tabs.sendMessage(tabs[0].id, {
+				status: status,
+				link: requested_link,
+				type: typeof requested_link
+			});
+		})
 
 	// localStorage codea
 	browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
@@ -110,5 +126,5 @@ function pasteLink(info, tab){
 		    if (request.method == "getLocalStorage")
 		        sendResponse({ data: allLinks });
 		    else
-		        sendResponse({}); // snub them.
+		        sendResponse({});
 		});
