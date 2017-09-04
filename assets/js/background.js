@@ -113,6 +113,7 @@ function pasteLink(info, tab){
 				type: typeof requested_link
 			});
 		})
+	}
 
 	// localStorage codea
 	browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
