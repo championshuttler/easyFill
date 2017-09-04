@@ -51,6 +51,7 @@ $(document).on('ready', function(){
 		animate_text("#remove_text")
 	});
 
-
+  //// trigger to show the damn saved links
+  	updateUI();
 
 });
