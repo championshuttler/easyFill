@@ -1,6 +1,7 @@
 /*
 * @Author: championshuttler
 * @Date:   2017-09-04 04:57:34
+@Last Modified time: 2017-09-04 01:20:44
 */
 
 var element;
@@ -14,7 +15,7 @@ var element;
  	"text",
  	"url",
   "number",
- 	"search",
+ 	"search",             // Enough?
  	"tel",
  	"password"
  ];
@@ -26,7 +27,7 @@ var element;
 	"range",
 	"date",
 	"month",
-	"week",
+	"week",         // Have to check again :D
 	"time",
 	"datetime",
 	"datetime-local",
