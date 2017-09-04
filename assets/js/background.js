@@ -92,6 +92,6 @@ function pasteLink(info, tab){
 	else if (info.menuItemId == mobile) {
 		requested_key = "mobile";
 	}
-	else if (info.menuItemId == extra) {
-		requested_key = "extra";
-	}
+	// else if (info.menuItemId == extra) {
+	// 	requested_key = "extra";
+	// }
