@@ -4,7 +4,7 @@
  @LastUpdated : 2017-09-05 00:45:45        coding with weedy eyes :P
 */
 
-var list_keys = [ 'personal', 'email', 'github', 'linkedin', 'twitter', 'facebook', 'personal', 'email', 'mobile'];
+var list_keys = [ 'personal', 'email', 'github', 'linkedin', 'twitter', 'facebook', 'mobile'];
 
 // updateUI show saved links when popup page is opened by clicking on browser icon
 function updateUI(){
