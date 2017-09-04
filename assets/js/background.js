@@ -57,8 +57,41 @@ var mobile = browser.contextMenus.create({
 	"onclick": pasteLink
 });
 
-// var parent = browser.contextMenus.create({
-// 	"title": "Paste easy link here",
+// var extra = browser.contextMenus.create({
+// 	"title": "Any Other Link",
 // 	"contexts": ["editable"],
 // 	"onclick": pasteLink
 // });
+
+
+
+function pasteLink(info, tab){
+
+	var requested_key, requested_link, status;
+
+	 if(info.menuItemId == email){
+		requested_key = "email"
+	}
+	else if(info.menuItemId == personal){
+		requested_key = "personal";
+	}
+	else if(info.menuItemId == github){
+		requested_key = "github";
+	}
+	else if(info.menuItemId == linkedin){
+		requested_key = "linkedin";
+	}
+
+	else if(info.menuItemId == twitter){
+		requested_key = "twitter";
+	}
+	else if(info.menuItemId == facebook){
+		requested_key = "facebook";
+	}
+
+	else if (info.menuItemId == mobile) {
+		requested_key = "mobile";
+	}
+	else if (info.menuItemId == extra) {
+		requested_key = "extra";
+	}
