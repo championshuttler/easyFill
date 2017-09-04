@@ -95,3 +95,20 @@ function pasteLink(info, tab){
 	// else if (info.menuItemId == extra) {
 	// 	requested_key = "extra";
 	// }
+
+
+
+	// localStorage codea
+	browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+		    var allLinks = {};
+
+		    for(var key in localStorage){
+		        if(localStorage.hasOwnProperty(key) && localStorage.getItem(key) !== ''){
+		            allLinks[key] = localStorage.getItem(key);
+		        }
+		    }
+		    if (request.method == "getLocalStorage")
+		        sendResponse({ data: allLinks });
+		    else
+		        sendResponse({}); // snub them.
+		});
