@@ -33,3 +33,25 @@ var element;
 	"datetime-local",
 	"color"
 ];
+
+
+$(document).on('ready', function(){
+
+	browser.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+		if(message.status == "success" && message.type == "string"){
+			var caretPos = getCaretPosition(element),
+				initialValue = element.value,
+				firstPart = initialValue.substr(0,caretPos),
+				selectedText = initialValue.substring(element.selectionStart, element.selectionEnd),
+				lastPart;
+
+			// This makes sure the selected text is removed while pasting the link
+			if (selectedText != '') {
+				lastPart = initialValue.substr(caretPos + selectedText.length);
+			} else {
+				lastPart = initialValue.substr(caretPos);
+			}
+
+			element.value = firstPart + message.link + lastPart;
+		}
+	});
