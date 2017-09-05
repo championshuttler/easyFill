@@ -12,7 +12,7 @@
 },
 
 "background": {
-"scripts": ["background.js"]
+"scripts": ["assets/js/background.js"]
 },
 
   "icons" : {
@@ -25,7 +25,7 @@
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["jquery.js", "content.js"]
+      "js": ["assets/js/jquery.js", "assets/jscontent.js"]
     }
   ]
 
