@@ -6,7 +6,7 @@
 
 
 var parent = browser.contextMenus.create({
-	"title": "Paste easy link here",
+	"title": "Paste links here",
 	"contexts": ["editable"],
 	"onclick": pasteLink
 });
@@ -52,6 +52,7 @@ var email = browser.contextMenus.create({
 	"contexts": ["editable"],
 	"onclick": pasteLink
 });
+
 
 function pasteLink(info, tab){
 

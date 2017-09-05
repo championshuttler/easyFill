@@ -6,33 +6,61 @@
 
 var element;
 
- document.addEventListener("contextmenu", function(e){
-   element = e.target ;
- });
+document.addEventListener("contextmenu", function(e){
+	element = e.target;
+});
 
+var textAcceptingInputTypes = [
+	"text",
+	"url",
+	"search",
+	"tel",
+	"password"
+];
 
- var textAcceptingInputTypes = [
- 	"text",
- 	"url",
-  "number",
- 	"search",             // Enough?
- 	"tel",
- 	"password"
- ];
-
-
- var forbiddenTextAcceptingInputTypes = [
+var forbiddenTextAcceptingInputTypes = [
 	"number",
 	"email",
 	"range",
 	"date",
 	"month",
-	"week",         // Have to check again :D
+	"week",
 	"time",
 	"datetime",
 	"datetime-local",
 	"color"
 ];
+
+function getCaretPosition(field){
+	// initialize
+	var caretPos = 0;
+
+	if($.inArray(field.type, textAcceptingInputTypes) > -1){
+		// Standard-compliant browsers
+		caretPos = field.selectionStart;
+	}
+	else if('selectionStart' in field && $.inArray(field.type, forbiddenTextAcceptingInputTypes) == -1){
+		// Standard-compliant browsers
+		caretPos = field.selectionStart;
+	}
+	else if(document.selection){
+		// IE support
+
+		// set focus on the element
+		field.focus();
+
+		// to get cursor position, get empty selection range
+		var sel = document.selection.createRange();
+
+		// move selection start to 0 position
+		sel.moveStart('character', -field.value.length);
+
+		// the caret position is selection length
+		caretPos = sel.text.length;
+	}
+
+	return caretPos;
+}
 
 
 $(document).on('ready', function(){
@@ -56,8 +84,7 @@ $(document).on('ready', function(){
 		}
 	});
 
-
-  browser.runtime.sendMessage({ method: "getLocalStorage", key: "status" }, function(response) {
+	browser.runtime.sendMessage({ method: "getLocalStorage", key: "status" }, function(response) {
 		for (var key in response.data) {
 			$('input').each(function(index, data) {
 				if (data.type != 'hidden' && $.inArray(data.type, forbiddenTextAcceptingInputTypes) == -1) {

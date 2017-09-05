@@ -4,7 +4,7 @@
  @LastUpdated : 2017-09-05 01:08:25        coding with weedy eyes :P
 */
 
-var list_keys = [ 'personal', 'email', 'github', 'linkedin', 'twitter', 'facebook', 'mobile'];
+var list_keys = ['linkedin', 'github', 'twitter', 'facebook', 'personal', 'email'];
 
 // updateUI show saved links when popup page is opened by clicking on browser icon
 function updateUI(){
@@ -19,14 +19,13 @@ function updateUI(){
 		}
 	}
 }
+
 function animate_text(id){
 	var text_div = $(id)
 
 	text_div.show();
 	text_div.fadeOut(2000);
 }
-
-
 
 $(document).on('ready', function(){
 
@@ -51,7 +50,7 @@ $(document).on('ready', function(){
 		animate_text("#remove_text")
 	});
 
-  //// trigger to show the damn saved links
-  	updateUI();
+	// trigger to show the saved links
+	updateUI();
 
 });
