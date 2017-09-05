@@ -6,7 +6,7 @@
 
 
 var parent = browser.contextMenus.create({
-	"title": "Paste links here",
+	"title": "Paste  link here",
 	"contexts": ["editable"],
 	"onclick": pasteLink
 });
@@ -61,6 +61,7 @@ var facebook = browser.contextMenus.create({
 var mobile = browser.contextMenus.create({
 	"title": "Mobile Number",
 	"contexts": ["editable"],
+	"parentId" : parent,
 	"onclick": pasteLink
 });
 
