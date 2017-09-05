@@ -61,7 +61,7 @@ var facebook = browser.contextMenus.create({
 var mobile = browser.contextMenus.create({
 	"title": "Mobile Number",
 	"contexts": ["editable"],
-	"parentId" : parent,s
+	"parentId" : parent,
 	"onclick": pasteLink
 });
 
