@@ -8,4 +8,4 @@ This extension will help you apply for jobs and create profiles in a jiffy. Just
 
 Download this add-ons to skip this cumbersome process and jump onto the "put the link to use" part.
 
-Happy easy-pasting!
+Happy easyFill :)
