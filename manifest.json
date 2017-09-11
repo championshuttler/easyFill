@@ -3,7 +3,7 @@
   "name": "Easy Fill",
   "version": "1.0",
 
-  "description": "A mozilla add-ons to make Developers more lazy :P",  //Temporary description
+  "description": "A mozilla add-ons to keep all your used profile links just a click away.",  //Temporary description
 
   "browser_action": {
   		"default_icon": "icons/32.png",

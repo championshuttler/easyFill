@@ -1,6 +1,6 @@
 # easyFill
 
-A chrome extension to keep all your frequently used profile links just a click away.
+A Mozilla add-ons to keep all your frequently used profile links just a click away.
 
 This Mozilla add-ons helps you keep all your frequently used profile links handy. It lets you save these links and use them anywhere with just a click.
 
