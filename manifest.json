@@ -6,7 +6,7 @@
   "description": "A mozilla add-ons to make Developers more lazy :P",  //Temporary description
 
   "browser_action": {
-  		"default_icon": "icons/48.png",
+  		"default_icon": "icons/32.png",
   		"default_popup": "index.html",
   		"default_title": "easyFill"
   	},
@@ -26,8 +26,8 @@
   		"contextMenus"
   	],
 
-  	"icons": {
-  		"48": "icons/48.png"
-
-  	}
+    "icons": {
+		"16": "assets/icons/16.png",
+		"32": "assets/icons/32.png",
+		"64": "assets/icons/64.png"
   }
