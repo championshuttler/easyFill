@@ -9,4 +9,11 @@ Just click and voila! you have the link by your side. It helps you get rid of th
 
 Download this add-ons to skip this cumbersome process and jump onto the "put the link to use" part.
 
+Steps to install a local Add-On
+
+1. Download the zip file and extract the files.
+2. Now, go to the mozilla browser, write "about:debugging" in the URL space and hit enter.
+3. Click on Load Temporary Add On
+4. Navigate through your files to find the folder downloaded, double click on the .js file.
+
 Happy easyFill :)
