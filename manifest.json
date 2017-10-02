@@ -3,7 +3,7 @@
   "name": "Easy Fill",
   "version": "1.0",
 
-  "description": "A mozilla add-ons to keep all your all profile links just a click away.",  //Temporary description
+  "description": "A mozilla add-ons to keep all your all profile links just a click away.",
 
   "browser_action": {
   		"default_icon": "icons/32.png",
@@ -18,7 +18,7 @@
   	"content_scripts": [
   		{
   			"matches": ["*://*/*"],
-  			"js": ["assets/js/jquery1.js", "assets/js/content.js"]
+  			"js": ["assets/js/jquery3.js", "assets/js/content.js"]
   		}
   	],
 
