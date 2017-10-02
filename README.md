@@ -14,8 +14,15 @@ Steps to install a local Firefox add-On:
 
 1. Download the zip file and extract the files.
 2. In Firefox's address bar type 'about:debugging' and hit enter.
+![Step 1](./instructions/step1.png)
+
 3. Click on 'Load Temporary Add On' button.
+![Step 2](./instructions/step2.png)
+
 4. Navigate through your files to find the folder where you have extracted the files and double click on the 'manifest.json' file.
+![Step 3](./instructions/step3.png)
+
 5. easyFill should now be installed. To use it, Click on ![easyFill icon](./icons/16.png) that appears in the toolbar.
+![Step 4](./instructions/step4.png)
 
 Enjoy your easyFill experience :)
