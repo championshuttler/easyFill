@@ -1,7 +1,8 @@
 /*
 * @Author: championshuttler
-* @Date:   2017-09-05  00:39:44
- @LastUpdated : 2017-09-05 01:08:25        coding with weedy eyes :P
+* @Contributors: Athyk
+* @Date:   2017-09-05
+* @LastUpdated: 2017-10-02
 */
 
 var list_keys = ['linkedin', 'github', 'twitter', 'facebook', 'personal', 'email'];
@@ -21,15 +22,15 @@ function updateUI(){
 }
 
 function animate_text(id){
-	var text_div = $(id)
+	var text_div = document.getElementById(id);
 
-	text_div.show();
-	text_div.fadeOut(2000);
+	text_div.style.display = 'block';
+	text_div.className += " fadeOut";
 }
 
-$(document).on('ready', function(){
+document.addEventListener("DOMContentLoaded", function(event) { 
 
-	$("#save_links").on('click', function(e){
+	document.getElementById("save_links").onclick = function(){
 		document.getElementById("save_links").innerHTML = "Saving..";
 		for(var i in list_keys){
 			var key = list_keys[i];
@@ -38,17 +39,17 @@ $(document).on('ready', function(){
 		}
 		// trigger to show the saved links
 		updateUI();
-		animate_text("#success_text");
+		animate_text("success_text");
 
 		document.getElementById("save_links").innerHTML = "Save links";
-	});
+	};
 
-	$("#remove").on("click", function(){
+	document.getElementById("remove").onclick = function(){
 		localStorage.clear();
 		updateUI();
 
-		animate_text("#remove_text")
-	});
+		animate_text("remove_text")
+	};
 
 	// trigger to show the saved links
 	updateUI();

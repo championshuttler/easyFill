@@ -38,3 +38,18 @@ h1 {
 label {
 	font-size: 14px;
 }
+
+@-webkit-keyframes fadeout {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+@keyframes fadeout {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+.fadeOut {
+  opacity:0;
+  -moz-animation   : fadeout 1s linear;
+  -webkit-animation: fadeout 1s linear;
+  animation        : fadeout 1s linear;
+}
