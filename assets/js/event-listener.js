@@ -28,10 +28,12 @@ function animate_text(id){
 	text_div.className += " fadeOut";
 }
 
-document.addEventListener("DOMContentLoaded", function(event) { 
+document.addEventListener("DOMContentLoaded", function(event) {
+	var saveLinksNode = document.getElementById("save_links");
 
-	document.getElementById("save_links").onclick = function(){
-		document.getElementById("save_links").innerHTML = "Saving..";
+	saveLinksNode.onclick = function(){
+		saveLinksNode.removeChild(saveLinksNode.lastChild);
+		saveLinksNode.appendChild(document.createTextNode("Saving.."));
 		for(var i in list_keys){
 			var key = list_keys[i];
 			var newValue = document.getElementById(key).value;
@@ -41,7 +43,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		updateUI();
 		animate_text("success_text");
 
-		document.getElementById("save_links").innerHTML = "Save links";
+		saveLinksNode.removeChild(saveLinksNode.lastChild);
+		saveLinksNode.appendChild(document.createTextNode("Save links"));
 	};
 
 	document.getElementById("remove").onclick = function(){
