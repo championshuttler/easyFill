@@ -63,10 +63,9 @@ function getCaretPosition(field){
 }
 
 
-$(document).on('ready', function(){
 
 	browser.runtime.onMessage.addListener(function(message, sender, sendResponse) {
-		if(message.status == "success" && message.type == "string"){
+		if(message.status == "success" && message.type == "string"){			
 			var caretPos = getCaretPosition(element),
 				initialValue = element.value,
 				firstPart = initialValue.substr(0,caretPos),
@@ -99,4 +98,3 @@ $(document).on('ready', function(){
 		}
 	});
 
-});
