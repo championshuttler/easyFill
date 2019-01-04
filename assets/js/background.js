@@ -54,26 +54,26 @@ var email = browser.contextMenus.create({
 });
 
 
-function pasteLink(info, tab){
+function pasteLink(info, tab) {
 
 	var requested_key, requested_link, status;
 
-	if(info.menuItemId == linkedin){
+	if (info.menuItemId == linkedin) {
 		requested_key = "linkedin";
 	}
-	else if(info.menuItemId == github){
+	else if (info.menuItemId == github) {
 		requested_key = "github";
 	}
-	else if(info.menuItemId == twitter){
+	else if (info.menuItemId == twitter) {
 		requested_key = "twitter";
 	}
-	else if(info.menuItemId == facebook){
+	else if (info.menuItemId == facebook) {
 		requested_key = "facebook";
 	}
-	else if(info.menuItemId == personal){
+	else if (info.menuItemId == personal) {
 		requested_key = "personal";
 	}
-	else if(info.menuItemId == email){
+	else if (info.menuItemId == email) {
 		requested_key = "email"
 	}
 
@@ -84,7 +84,7 @@ function pasteLink(info, tab){
 	}, function (tabs) {
 		requested_link = localStorage.getItem(requested_key);
 		status = "success";
-		if(typeof requested_link == "object" || requested_link == ""){
+		if (typeof requested_link == "object" || requested_link == "") {
 			status = "fail";
 		}
 
@@ -97,16 +97,16 @@ function pasteLink(info, tab){
 	});
 }
 
-	browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-	    var allLinks = {};
+browser.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+	var allLinks = {};
 
-	    for(var key in localStorage){
-	        if(localStorage.hasOwnProperty(key) && localStorage.getItem(key) !== ''){
-	            allLinks[key] = localStorage.getItem(key);
-	        }
-	    }
-	    if (request.method == "getLocalStorage")
-	        sendResponse({ data: allLinks });
-	    else
-	        sendResponse({}); // snub them.
-	});
+	for (var key in localStorage) {
+		if (localStorage.hasOwnProperty(key) && localStorage.getItem(key) !== '') {
+			allLinks[key] = localStorage.getItem(key);
+		}
+	}
+	if (request.method == "getLocalStorage")
+		sendResponse({ data: allLinks });
+	else
+		sendResponse({}); // snub them.
+});
